@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,20 @@ Route::get('/', function () {
     */
     return view('welcome');
 });
+
+
+Route::get('/debug-sentry', function () {
+    throw new Exception('My first Sentry error!');
+});
+
+
+Route::get('/123', function () {
+    Log::debug('Message');
+
+    // logger()
+    //     ->channel('telegram')
+    //     ->debug('Test Log');
+
+    return view('welcome');
+});
+
