@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    /*
     logger()
         ->channel('telegram')
         ->debug('Hello!');
+    */
+    //Product::query();
 
     //throw new \App\Services\Telegram\Exceptions\TelegramBotApiException('12345');
 
