@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Sentry\Laravel\Integration;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -46,5 +47,9 @@ class Handler extends ExceptionHandler
             //
             Integration::captureUnhandledException($e);
         });
+        /*
+        $this->renderable(function (NotFoundHttpException $e) {
+            return response('123')->json([]);        });
+        */
     }
 }
